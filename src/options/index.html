@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EneiEditor Extension Options</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .enei__form {
+            display: flex;
+            flex-flow: column;
+            padding: 10px 20px;
+        }
+
+        .enei__form :is(input, label) {
+            width: 100%;
+        }
+
+        .enei__form-actions {
+            margin-top: 10px;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .enei__button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0 8px;
+            font-size: 12px;
+            height: 28px;
+            background-color: #eaeaea;
+            color: #000;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            overflow: visible;
+            margin: 1px;
+        }
+
+        [type=button] {
+            margin-left: auto;
+        }
+
+        .enei-primary-color {
+            background-color: #468cff;
+            color: #fff;
+        }
+
+        .enei-success-color {
+            background-color: #198a00!important;
+            color: #fff!important;
+        }
+
+        .enei__form label {
+            font-weight: bold;
+        }
+
+        .enei__form input {
+            border: 1px solid #efefef;
+            padding: 4px 8px;
+            margin-top: 8px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #b7b7b7;
+        }
+    </style>
+</head>
+<body>
+    <form class="enei__form">
+        <div>
+            <label for="enei_server_endpoint">Server Endpoint:</label>
+            <input type="url" name="enei_server_endpoint" id="enei_server_endpoint" placeholder="Enter server url..."/>
+        </div>
+        <div class="enei__form-actions">
+            <button class="enei__button enei-success-color" id="js-enei-save" type="submit">Save</button>
+            <button class="enei__button enei-primary-color" type="reset">Reset</button>
+            <button class="enei__button" type="button" id="js-enei-cancel">Cancel</button>
+        </div>
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>

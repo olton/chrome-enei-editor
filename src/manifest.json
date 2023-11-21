@@ -1,0 +1,45 @@
+{
+    "name": "__MSG_name__",
+    "description": "__MSG_description__",
+    "version": "1.0",
+    "manifest_version": 3,
+    "default_locale": "en",
+    "icons": {
+        "128": "icons/icon-128.png"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "tabs",
+        "activeTab"
+    ],
+    "action": {
+        "default_icon": {
+            "128": "icons/icon-128.png"
+        }
+    },
+    "options_ui": {
+        "page": "options/index.html"
+    },
+    "background": {
+        "service_worker": "js/background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "run_at": "document_idle",
+            "all_frames": false,
+            "js": ["js/rooster.js", "js/helpers.js", "js/enei-html.js", "js/editor.js"],
+            "css": ["css/icons.css", "css/index.css"]
+        }
+    ],
+    "host_permissions": [],
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Alt+Shift+E"
+            }
+        }
+    }
+}

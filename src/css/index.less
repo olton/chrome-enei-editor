@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+.enei__overlay {
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.enei__editor {
+    display: flex;
+    position: fixed;
+    flex-flow: column;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,.4);
+
+    .enei__text {
+        margin: 4px;
+        padding: 4px;
+        overflow: auto;
+
+        &[contenteditable=true] {
+            border: 1px solid #d9d9d9;
+            outline: 1px solid #d9d9d9;
+        }
+
+        .enei-injected-button {
+            display: none!important;
+        }
+    }
+
+    .enei__actions {
+        font-family: "Roboto", serif;
+        display: flex;
+        flex-flow: row nowrap ;
+        justify-content: flex-start;
+        padding: 0 4px 4px 2px;
+        align-items: center;
+
+        * {
+            margin-left: 2px;
+        }
+    }
+}
+
+.enei__button, .enei__tool-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0 8px;
+    font-size: 12px;
+    height: 28px;
+    background-color: #eaeaea;
+    color: #000;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: visible;
+    margin: 1px;
+
+    .icon + .caption {
+        margin-left: 8px;
+    }
+    .caption + .icon {
+        margin-left: 8px;
+    }
+
+    &:disabled {
+        color: #b7b7b7;
+        cursor: default;
+    }
+}
+
+.enei-primary-color {
+    background-color: #468cff!important;
+    color: #fff!important;
+}
+
+.enei-success-color {
+    background-color: #198a00!important;
+    color: #fff!important;
+}
+
+.ene-alert-color {
+    background-color: #ff1f1f!important;
+    color: #fff!important;
+}
+
+.enei__toolbar {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 2px;
+    margin: 4px 2px 2px 2px;
+    font-family: "Roboto", serif;
+
+    .enei__tool-divider {
+        display: block;
+        width: 4px;
+        height: 24px;
+    }
+}
+
+.enei__tool-button {
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+    background: #eaeaea;
+    color: black;
+    &.active {
+        background-color: #acacac;
+        color: #fff;
+    }
+    &:disabled {
+        color: #b7b7b7;
+        cursor: default;
+    }
+}
+
+.enei-dialog {
+    header {
+        h3 {
+            margin: 4px 0;
+        }
+    }
+    label, input {
+        width: 100%;
+        font-size: 14px;
+    }
+    label {
+
+    }
+    input {
+        border: 1px solid #efefef;
+        padding: 4px 8px;
+        &:focus {
+            outline: none;
+            border-color: #b7b7b7;
+        }
+    }
+    .enei-dialog__actions {
+        margin-top: 10px;
+    }
+}
+
+.enei__dropdown {
+    position: relative;
+
+    ul {
+        list-style: none inside;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        margin: 0;
+        padding: 4px;
+        border: 1px solid #efefef;
+        box-shadow: 4px 4px 10px rgba(0,0,0,.4);
+        display: none;
+        font-family: "Roboto", serif;
+
+        li {
+            white-space: nowrap;
+            display: flex;
+            font-size: 14px;
+            padding: 4px 8px;
+            cursor: pointer;
+
+            &:hover {
+                background: #eeeeee;
+            }
+
+            &.divider {
+                height: 1px;
+                width: 100%;
+                background: #efefef;
+                padding: 0;
+            }
+        }
+    }
+
+    button.active + ul {
+        display: block;
+    }
+}

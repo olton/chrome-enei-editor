@@ -1,0 +1,11 @@
+{
+  "name": "@olton/chrome-enei-editor",
+  "version": "0.1.0",
+  "description": "Chrome extension with EneiEditor for Headless CMS ENEI",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Serhii Pimenov <serhii@pimenov.com.ua>",
+  "license": "MIT"
+}
